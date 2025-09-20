@@ -11,6 +11,7 @@ import {
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 import AdminLinks from "./adminLinks";
+import Home from "./home";
 
 
 // import { useEffect } from "react";
@@ -83,7 +84,7 @@ const Dashboard = () => {
                     <div style={{ position: "sticky", height: "100vh", top: 0 }} className="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-secondary d-none d-md-block">
                         <div className="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
                             <a
-                                href="/"
+                                href="/dashboard/"
                                 className="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
                             >
                                 <span className="fs-5 d-none d-sm-inline">Menu</span>
@@ -160,13 +161,18 @@ const Dashboard = () => {
                  <div className="col py-3">
                  
                         <Switch>
-                            <Route exact path="/">
-                                <h1 className="text-center">Hello world</h1>
+                            <Route exact path="/dashboard/">
+                            <Home/>
                             </Route>
                         </Switch>
                         <Switch>
-                            <Route exact path="/transaction">
+                            <Route exact path="/dashboard/transaction">
                                 <h1 className="text-center">Transaction</h1>
+                            </Route>
+                        </Switch>
+                        <Switch>
+                            <Route exact path="/dashboard/users">
+                                <h1 className="text-center">Users</h1>
                             </Route>
                         </Switch>
                     </div>
@@ -181,20 +187,20 @@ export default Dashboard;
 
 
 
-// <Route path="/user-dashboard/staking">
+// <Route path="/dashboard/user-dashboard/staking">
 // <Staking/>
 
 // </Route>
-// <Route path="/user-dashboard/transfer">
+// <Route path="/dashboard/user-dashboard/transfer">
 // <Transfer/>
 
 // </Route>
-// <Route path="/user-dashboard/referrals">
+// <Route path="/dashboard/user-dashboard/referrals">
 // {/* <h1>hellworld</h1> */}
 // <Referrals/>
 
 // </Route>
-// <Route path="/user-dashboard/withdraw">
+// <Route path="/dashboard/user-dashboard/withdraw">
 // <Withdraw/>
 
 // </Route>
